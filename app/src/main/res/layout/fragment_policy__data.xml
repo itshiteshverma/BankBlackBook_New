@@ -1,0 +1,643 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.itshiteshverma.bankblackbook.Policy.Policy_Data">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:weightSum="30">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Policy Number"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <TextView
+                                android:id="@+id/tvPolicyNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:text="" />
+
+                            <ImageView
+                                android:id="@+id/imageViewSharePolicy"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:src="@drawable/ic_menu_share" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Policy Name"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPolicyName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bank"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvBankName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="5dp"
+                        android:text="Percentage Completed"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPercentageDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                        android:id="@+id/pbPolicyProgressbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_margin="20dp"
+                        android:layout_weight="50"
+                        android:tooltipText="Percentafe"
+                        app:cpb_background_progressbar_color="#FFCDD2"
+                        app:cpb_background_progressbar_width="5dp"
+                        app:cpb_progressbar_color="#F44336"
+                        app:cpb_progressbar_width="10dp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:background="#a2000000" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="20">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:padding="3dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="start"
+                            android:background="@drawable/border"
+                            android:gravity="start"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Start Date"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/bStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:text=""
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+                        <!--<ImageView-->
+                        <!--android:id="@+id/imageView2"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerHorizontal="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:src="@drawable/arrow" />-->
+
+                        <LinearLayout
+                            android:id="@+id/imageView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/border"
+                            android:gravity="start"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:id="@+id/textViewTotalTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total Time"
+                                android:textColor="#d9e66524"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/linearLayout"
+                            android:layout_toStartOf="@+id/linearLayout"
+                            android:src="@drawable/arrow" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/arrow" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@+id/linearLayout2"
+                            android:layout_toRightOf="@+id/linearLayout2"
+                            android:src="@drawable/arrow" />
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_gravity="end"
+                            android:background="@drawable/border"
+                            android:gravity="end"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="End Date"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/bEndDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:text=""
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginRight="23dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginRight="23dp"
+                            android:layout_weight="5"
+                            android:background="@drawable/border"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Due Date"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/bDueDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:text=""
+                                android:textSize="15dp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginRight="23dp"
+                            android:layout_weight="5"
+                            android:background="@drawable/border"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Last Premium Date"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/bLastPremiumDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:text="Null"
+                                android:textSize="15dp" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#a2000000" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Amount"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPremiumAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_rupee_indian"
+                            android:text=""
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="50"
+                            android:background="@drawable/border"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Initial Amount(if any)"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvInitialAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_rupee_indian"
+                                android:text=""
+                                android:textSize="25dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="50"
+                            android:background="@drawable/border"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Matured Amount(if any)"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvMaturityAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_rupee_indian"
+                                android:text=""
+                                android:textSize="25dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Policy Holder Name"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPolicyHolderName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Payment Mode"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTypeofPolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nominee(if any)"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNomineePolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Remarks"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvRemarksPolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <Button
+                            android:id="@+id/bDeletePolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="30"
+                            android:background="#a0ed0808"
+                            android:text="Delete"
+                            android:textColor="#e6f6f4f4"
+                            android:textSize="15dp" />
+
+                        <Button
+                            android:id="@+id/bUpdatePolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="70"
+                            android:background="#bdebe70d"
+                            android:text="Update" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#a2000000" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last Updated on : " />
+
+                        <TextView
+                            android:id="@+id/tvTimeStamp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

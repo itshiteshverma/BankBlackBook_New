@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginAndSignUp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Policy &amp; FD Manager"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/logo_icon" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_email_black_24dp"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_ac_unit_black_24dp"
+                        android:focusableInTouchMode="true"
+                        android:hint="Password"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+
+                    <Button
+                        android:id="@+id/sign_up_button"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:background="#995fcde8"
+                        android:text="Sign In / Log In"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+
+                    <com.google.android.gms.common.SignInButton
+                        android:id="@+id/glogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"></com.google.android.gms.common.SignInButton>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_reset_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:text="Forgot password"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/llpasword_reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etrestEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:focusableInTouchMode="true"
+                        android:hint="Enter Email"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                    <Button
+                        android:id="@+id/btn_reset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="80"
+                        android:text="RESET" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_round_red"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Help"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+

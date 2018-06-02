@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="3dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Policy.AddPolicy"
+    tools:showIn="@layout/activity_add_policy">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Policy Number *"
+                    android:paddingTop="20dp">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/etPolicyNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_helperText="Unique Policy Number"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Policy Name &amp; Type *">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/etPolicyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:inputType="text"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_helperText="Name of the Policy or Type"
+                        app:met_maxCharacters="50"
+                        app:met_primaryColor="#d52a71f5" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Bank Name and Branch *"
+                    android:paddingTop="20dp">
+
+
+                    <com.itshiteshverma.bankblackbook.HelperClass.CustomAutoCompleteView
+                        android:id="@+id/etBank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:completionThreshold="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5"></com.itshiteshverma.bankblackbook.HelperClass.CustomAutoCompleteView>
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name of Policy Holder *"
+                    android:paddingTop="20dp">
+
+
+                    <com.itshiteshverma.bankblackbook.HelperClass.CustomAutoCompleteView
+                        android:id="@+id/etNameofFDHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:completionThreshold="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5"></com.itshiteshverma.bankblackbook.HelperClass.CustomAutoCompleteView>
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Initial Sum (If Any)">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/etInitialSum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:inputType="phone"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_helperText="Optional"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Matured Sum (If Any)">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/etGauranteedMaturedSum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:inputType="phone"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_helperText="Optional"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Premium Amount (If Any)">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/etPremiumSum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:inputType="phone"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_helperText="Optional"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nominee (If Any)"
+                    android:paddingTop="20dp">
+
+
+                    <com.itshiteshverma.bankblackbook.HelperClass.CustomAutoCompleteView
+                        android:id="@+id/etFDNominee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:completionThreshold="1"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="50"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="20"
+                        app:met_primaryColor="#d52a71f5"></com.itshiteshverma.bankblackbook.HelperClass.CustomAutoCompleteView>
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="FD Notes/Remark">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/etRemarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:inputType="text"
+                        android:maxLength="150"
+                        android:paddingLeft="10dp"
+                        app:met_baseColor="#e2292a2a"
+                        app:met_clearButton="true"
+                        app:met_errorColor="#eaf1350f"
+                        app:met_floatingLabel="highlight"
+                        app:met_maxCharacters="150"
+                        app:met_primaryColor="#d52a71f5" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Premium Payment Mode" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="9">
+
+                    <RadioButton
+                        android:id="@+id/rbYearly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:checked="true"
+                        android:text="Yearly"
+                        android:textSize="20dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbMonthly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:checked="false"
+                        android:text="Monthly"
+                        android:textSize="20dp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuaterly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:checked="false"
+                        android:text="Quaterly"
+                        android:textSize="20dp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LayourUpdateHide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="14dp"
+                        android:text="Start Date *"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/bStartDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:drawableRight="@drawable/ic_start_black_24dp"
+                        android:gravity="left|center_vertical"
+                        android:onClick="onStartDateClick"
+                        android:text="Start Date" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="14dp"
+                        android:text="Due Date * \n(of Year)"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/bDueDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:drawableRight="@drawable/due_date_24dp"
+                        android:gravity="left|center_vertical"
+                        android:onClick="onDueDateClick"
+                        android:text="Due Date" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="14dp"
+                        android:text="Maturity Date *"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/bMaturityDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:drawableRight="@drawable/ic_maturity_black_24dp"
+                        android:gravity="left|center_vertical"
+                        android:onClick="onMaturityDateClick"
+                        android:text="Maturity Date " />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginStart="14dp"
+                        android:text="Due Date of Last Premium \n(if Any)"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/bLastPremiumDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="10dp"
+                        android:drawableRight="@drawable/ic_hourglass_full_black_24dp"
+                        android:gravity="left|center_vertical"
+                        android:onClick="onLastPremiumClick"
+                        android:text="Last Premium Date" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Documents (Optional)" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <Button
+                        android:id="@+id/imageButtonAddFD_PDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="50"
+                        android:drawableLeft="@drawable/ic_picture_as_pdf_black_24dp"
+                        android:padding="20dp"
+                        android:text="Upload PDF/DOC" />
+
+
+                    <Button
+                        android:id="@+id/imageButtonAddPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="50"
+                        android:drawableRight="@drawable/ic_add_a_photo_black_24dp"
+                        android:padding="20dp"
+                        android:text="Upload Image" />
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/imageViewPhotoPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/ibDone"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="#b532eb69"
+                android:onClick="onDoneClick"
+                android:padding="4dp"
+                android:src="@drawable/ic_done_black_24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

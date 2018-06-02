@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.itshiteshverma.bankblackbook">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainPage"
+            android:label="@string/title_activity_main_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Policy.AddPolicy"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_add_policy"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FD.AddFD"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_add_fd"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Completed_PolicyAndFD"
+            android:label="Completed Policies &amp; FD"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Policy.PolicyDetails"
+            android:label="@string/title_activity_policy_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name=".ToolsPage"
+            android:label="Setting"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginAndSignUp"
+            android:label="@string/Login_and_signUp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FD.FDDetails"
+            android:configChanges="orientation"
+            android:label="@string/fd_details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".HelperClass.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".HelperClass.MyFireBaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.com.vansuita.pickimage.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/picker_provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="37c9a9b41cb7bd615000898056699934352a4edc" />
+
+    </application>
+
+</manifest>

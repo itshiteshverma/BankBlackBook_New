@@ -1,0 +1,440 @@
+{
+  "project_info": {
+    "project_number": "374354581637",
+    "firebase_url": "https://chat-b045a.firebaseio.com",
+    "project_id": "chat-b045a",
+    "storage_bucket": "chat-b045a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:c2b462c658ec2dd0",
+        "android_client_info": {
+          "package_name": "com.itshiteshverma.bankblackbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-ejcuhodclf7i71hgt6hr6sl0it86auru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.bankblackbook",
+            "certificate_hash": "ca4633f8e5ecd5cfc7ad9d0f7a413d22cc4f8306"
+          }
+        },
+        {
+          "client_id": "374354581637-ei4efeako7190e2ih4qr411i65rt6mov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.bankblackbook",
+            "certificate_hash": "e5d3492de375adb7916006dfba931b3b7da58512"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:7e18552ced83d0ec",
+        "android_client_info": {
+          "package_name": "com.itshiteshverma.firebaseadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-qffhaaoks11f6gcej23s8dcu8ncpkvne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.firebaseadmin",
+            "certificate_hash": "ca4633f8e5ecd5cfc7ad9d0f7a413d22cc4f8306"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:9889cfe09520b73c",
+        "android_client_info": {
+          "package_name": "com.itshiteshverma.firebaseblogapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-iqkrd104kb8q2dnrftcnevipr3rja7eu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.firebaseblogapp",
+            "certificate_hash": "e950cc2d7ce7f276150d69694bedc0f6f0371dd9"
+          }
+        },
+        {
+          "client_id": "374354581637-bu6ggsmunkt79sbo9qp95t1u4hi8350d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.firebaseblogapp",
+            "certificate_hash": "c699d441b387357f4a1f7cd92c9ae951da30cc72"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:fdd119b04ea2c1df",
+        "android_client_info": {
+          "package_name": "com.itshiteshverma.forkme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-6i3irdgglumnc7q4uvtd1mcvqt06fb4p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.forkme",
+            "certificate_hash": "ca4633f8e5ecd5cfc7ad9d0f7a413d22cc4f8306"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:c528663c1ef65166",
+        "android_client_info": {
+          "package_name": "com.itshiteshverma.payatm_Spoof"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-hek62611qcv44gcphm04udqihikseosl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.payatm_Spoof",
+            "certificate_hash": "ca4633f8e5ecd5cfc7ad9d0f7a413d22cc4f8306"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:79d5ce80f49a4e75",
+        "android_client_info": {
+          "package_name": "com.itshiteshverma.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-71goo6gbb4f7ha8rcfhrha9k573m8mtq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itshiteshverma.test",
+            "certificate_hash": "c699d441b387357f4a1f7cd92c9ae951da30cc72"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374354581637:android:a9967d7e5daa34ac",
+        "android_client_info": {
+          "package_name": "info.androidhive.cardview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-hs67bgmmvkdlnn35gbjvmbrc3tblgoka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.androidhive.cardview",
+            "certificate_hash": "ca4633f8e5ecd5cfc7ad9d0f7a413d22cc4f8306"
+          }
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "374354581637-jal1h0f5efed7krqa98qr6p0naoitoj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwhjv_tHiPWk3y8GF52hfj3Put3cEzzUk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374354581637-8ko8o4qrdkoao81cgtc89r1ifo6g9f01.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshiteshverma.bankblackbook"
+              }
+            },
+            {
+              "client_id": "374354581637-f842ls31n60ikblg1ggg7soqmelmthsa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

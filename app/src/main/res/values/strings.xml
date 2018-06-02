@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Policy &amp; FD Manager</string>
+    <string name="title_activity_main_page">Policy &amp; FD Manger</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_policy">Add Policy</string>
+    <string name="title_activity_policy_details">PolicyDetails</string>
+    <string name="title_activity_all_data">AllData</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_fd">Add FD</string>
+    <string name="Login_and_signUp">Login And SignUp</string>
+    <string name="fd_details">FD Details</string>
+    <string name="title_activity_completed__policy_and_fd">Completed Policy And FD</string>
+    <!--<string name="default_web_client_id">374354581637-ejcuhodclf7i71hgt6hr6sl0it86auru.apps.googleusercontent.com</string>-->
+    <string name="default_web_client_id_new">374354581637-ejcuhodclf7i71hgt6hr6sl0it86auru.apps.googleusercontent.com</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_fddetails">FDDetails</string>
+    <!--<string name="default_web_client_id">374354581637-ejcuhodclf7i71hgt6hr6sl0it86auru.apps.googleusercontent.com</string>-->
+</resources>

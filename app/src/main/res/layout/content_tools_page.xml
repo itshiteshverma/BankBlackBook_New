@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.itshiteshverma.bankblackbook.ToolsPage"
+    tools:showIn="@layout/activity_tools_page">
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nearest Due Date to Display [Days]"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNearestDueDateToDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="50"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_layout"
+        android:layout_margin="7dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your App ID"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etAppToknInd_firebase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll1"
+        android:layout_margin="7dp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete all your Data"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bDeleteAllData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#d0f50505"
+            android:text="RESET" />
+
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/ibSaveBetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:background="#b532eb69"
+        android:onClick="onSaveSetting"
+        android:padding="4dp"
+        android:src="@drawable/ic_done_black_24dp" />
+
+
+</RelativeLayout>
