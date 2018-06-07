@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,7 +27,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.itshiteshverma.bankblackbook.HelperClass.AddPremiumDetails;
 import com.itshiteshverma.bankblackbook.MainPage;
 import com.itshiteshverma.bankblackbook.R;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
@@ -61,6 +66,7 @@ public class Policy_Data extends Fragment {
     TextView PolicyNumber, PolicyName, PolicyHolderName, PremiumType,
             BankName, MaturityAmount, TimeStamp, ProgressBarText, Nominee, Remarks, PremiumAmount, InitialAmount, TotalTime;
     Button StartDate, EndDate, DueDate, DeletePolicy, UpdatePolicy, LastPremiumDate;
+    TextView PremiumData;
     int percentage = 0;
     ImageView sharePolicy;
 
@@ -75,6 +81,10 @@ public class Policy_Data extends Fragment {
 
     File imagePath;
     View view;
+    RecyclerView recyclerView;
+    DatabaseReference dataBaseReference_forPremiumData;
+    Query querySortAcctoDueDate;
+    FirebaseRecyclerAdapter<PolicyPremium_GetterSetter, ViewHolder_PolicyPremium> firebaseRecyclerAdapter;
 
 
     public Policy_Data() {
@@ -88,6 +98,8 @@ public class Policy_Data extends Fragment {
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_policy__data, container, false);
+
+
         initilize();
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -98,18 +110,35 @@ public class Policy_Data extends Fragment {
         databaseReference.child(DataID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 setData(dataSnapshot);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getActivity().getApplicationContext(), "Error: " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
 
+
+        dataBaseReference_forPremiumData = databaseReference2.child("premium_data");
+        querySortAcctoDueDate = dataBaseReference_forPremiumData.orderByChild("premium_date");
+        //        querySortAcctoMaturityDate = dataBaseReference.orderByChild("maturity_date").startAt(CurrentDateFull);
+        dataBaseReference_forPremiumData.keepSynced(true);
+
+
+        querySortAcctoDueDate.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                // pDialog.dismiss();
 
-                Toast.makeText(getActivity().getApplicationContext(), "Error: " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+
 
         return view;
     }
@@ -229,6 +258,22 @@ public class Policy_Data extends Fragment {
         });
 
         TotalTime = view.findViewById(R.id.textViewTotalTime);
+
+        PremiumData = view.findViewById(R.id.tvAddPremmiumData);
+        PremiumData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), AddPremiumDetails.class);
+                i.putExtra("POLICY_NAME", PolicyName.getText().toString());
+                startActivity(i);
+            }
+        });
+
+
+        recyclerView = view.findViewById(R.id.rvPolicyData);
+        recyclerView.setNestedScrollingEnabled(false);
+        // recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
     }
@@ -399,4 +444,58 @@ public class Policy_Data extends Fragment {
     }
 
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<PolicyPremium_GetterSetter, ViewHolder_PolicyPremium>
+                (
+                        PolicyPremium_GetterSetter.class,
+                        R.layout.premium_data_card,
+                        ViewHolder_PolicyPremium.class,
+                        querySortAcctoDueDate
+
+
+                ) {
+
+            @Override
+            protected void populateViewHolder(ViewHolder_PolicyPremium viewHolder, final PolicyPremium_GetterSetter model, final int position) {
+                viewHolder.setReciptNo(model.getRecipt_no());
+                viewHolder.setPremiumDate(model.getPremium_date());
+                if (!model.getAmount_paid().equals("")) {
+                    viewHolder.setAmountPaid(model.getAmount_paid());
+                }
+                viewHolder.setPaymentMode(model.getMode_of_payment());
+                viewHolder.setRemarks(model.getRemarks());
+                viewHolder.Delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new SweetAlertDialog(getActivity(), SweetAlertDialog.WARNING_TYPE)
+                                .setTitleText("Are you sure?")
+                                .setContentText("Won't be able to recover this")
+                                .setConfirmText("Yes,delete it!")
+                                .setCancelText("No,cancel it")
+                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                    @Override
+                                    public void onClick(SweetAlertDialog sDialog) {
+                                        dataBaseReference_forPremiumData.child(getRef(position).getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Toast.makeText(getActivity(), "Deleted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                                        sDialog.dismissWithAnimation();
+                                    }
+                                })
+                                .show();
+                    }
+                });
+
+
+            }
+        };
+
+
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
+        //MainLayout.setVisibility(View.VISIBLE);
+    }
 }

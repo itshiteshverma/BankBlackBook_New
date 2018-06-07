@@ -121,4 +121,6 @@ public class PolicyDetails extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
+
 }

@@ -601,6 +601,28 @@
                         android:layout_width="wrap_content"
                         android:layout_height="50dp" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="100">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvAddPolicyPremium"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:visibility="visible"></android.support.v7.widget.RecyclerView>
+
+                        <Button
+                            android:id="@+id/bReply"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="87"
+                            android:text="Reply" />
+
+                    </LinearLayout>
+
 
                     <Button
                         android:id="@+id/bDeleteFD"

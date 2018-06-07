@@ -17,7 +17,6 @@
         android:name=".Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -30,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainPage"
             android:label="@string/title_activity_main_page"
@@ -47,18 +45,14 @@
             android:label="@string/title_activity_add_fd"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".Completed_PolicyAndFD"
             android:label="Completed Policies &amp; FD"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".Policy.PolicyDetails"
             android:label="@string/title_activity_policy_details"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
         <activity
             android:name=".ToolsPage"
             android:label="Setting"
@@ -100,6 +94,7 @@
             android:name="io.fabric.ApiKey"
             android:value="37c9a9b41cb7bd615000898056699934352a4edc" />
 
+        <activity android:name=".HelperClass.AddPremiumDetails"></activity>
     </application>
 
 </manifest>
