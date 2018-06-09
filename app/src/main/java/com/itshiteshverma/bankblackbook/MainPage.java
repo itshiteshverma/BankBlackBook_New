@@ -81,14 +81,20 @@ public class MainPage extends AppCompatActivity
         userImage = headerView.findViewById(R.id.imageViewProfilePhoto);
         userEmailId = headerView.findViewById(R.id.tvUserEmailId);
 
-        userName.setText(user.getDisplayName());
-        userEmailId.setText(user.getEmail());
+        if (user != null) {
+            userName.setText(user.getDisplayName());
+        }
+        if (user != null) {
+            userEmailId.setText(user.getEmail());
+        }
 
-        Picasso.with(this)
-                .load(user.getPhotoUrl())
-                .placeholder(R.drawable.user_green)
-                .error(R.drawable.user_red)
-                .into(userImage);
+        if (user != null) {
+            Picasso.with(this)
+                    .load(user.getPhotoUrl())
+                    .placeholder(R.drawable.user_green)
+                    .error(R.drawable.user_red)
+                    .into(userImage);
+        }
         navigationView.setNavigationItemSelectedListener(this);
 
         viewPager = findViewById(R.id.viewpager);

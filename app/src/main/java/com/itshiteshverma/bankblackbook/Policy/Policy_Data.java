@@ -31,6 +31,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.itshiteshverma.bankblackbook.HelperClass.AddPremiumDetails;
 import com.itshiteshverma.bankblackbook.MainPage;
+import com.itshiteshverma.bankblackbook.Policy.Extra.PolicyPremium_GetterSetter;
+import com.itshiteshverma.bankblackbook.Policy.Extra.ViewHolder_PolicyPremium;
 import com.itshiteshverma.bankblackbook.R;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
@@ -64,7 +66,7 @@ public class Policy_Data extends Fragment {
 
     CircularProgressBar circularProgressBar;
     TextView PolicyNumber, PolicyName, PolicyHolderName, PremiumType,
-            BankName, MaturityAmount, TimeStamp, ProgressBarText, Nominee, Remarks, PremiumAmount, InitialAmount, TotalTime;
+            BankName, MaturityAmount, TimeStamp, ProgressBarText, Nominee, Remarks, PremiumAmount, InitialAmount, TotalTime, PolicyType, PremiumMethod, InsuredEvent;
     Button StartDate, EndDate, DueDate, DeletePolicy, UpdatePolicy, LastPremiumDate;
     TextView PremiumData;
     int percentage = 0;
@@ -162,6 +164,9 @@ public class Policy_Data extends Fragment {
         PremiumAmount = view.findViewById(R.id.tvPremiumAmount);
         InitialAmount = view.findViewById(R.id.tvInitialAmount);
         DeletePolicy = view.findViewById(R.id.bDeletePolicy);
+        PolicyType = view.findViewById(R.id.tvPolicyType);
+        PremiumMethod = view.findViewById(R.id.tvPremiumMethod);
+        InsuredEvent = view.findViewById(R.id.tvInsuredEvent);
         DeletePolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -236,9 +241,9 @@ public class Policy_Data extends Fragment {
             public void onClick(View view) {
                 new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
                         .setTitleText("Details")
-                        .setContentText("Total Duration : " + (int) yearsinBetweenStartAndEnd + " Years & " +
-                                (int) monthsinBetweenStartAndEnd % 12 + " Months. \n \n" + "Total Remaining : " + (int) yearsinBetweenCurrentAndEnd + " Years & " +
-                                (int) monthsinBetweenCurrentAndEnd % 12 + " Months.")
+                        .setContentText("Total Duration : " + (int) yearsinBetweenStartAndEnd + " Y & " +
+                                (int) monthsinBetweenStartAndEnd % 12 + " M. \n \n" + "Total Remaining : " + (int) yearsinBetweenCurrentAndEnd + " Y & " +
+                                (int) monthsinBetweenCurrentAndEnd % 12 + " M.")
 
                         .show();
 
@@ -289,11 +294,26 @@ public class Policy_Data extends Fragment {
         String premium_amount = (String) dataSnapshot.child("premium_amount").getValue();
         String maturity_date = (String) dataSnapshot.child("maturity_date").getValue();
 
-        String last_premium_date = null;
-        Boolean last_premium_date_Boolean = false;
+        String last_premium_date = null, insured_event = null, premium_method = null, policy_type = null;
+        Boolean last_premium_date_Boolean = false, insured_event_Boolean = false, premium_method_Boolean = false, policy_type_Boolean = false;
         if (dataSnapshot.hasChild("last_premium_date")) {
             last_premium_date = (String) dataSnapshot.child("last_premium_date").getValue();
             last_premium_date_Boolean = true;
+        }
+
+        if (dataSnapshot.hasChild("insured_event")) {
+            insured_event = (String) dataSnapshot.child("insured_event").getValue();
+            insured_event_Boolean = true;
+        }
+
+        if (dataSnapshot.hasChild("policy_type")) {
+            policy_type = (String) dataSnapshot.child("policy_type").getValue();
+            policy_type_Boolean = true;
+        }
+
+        if (dataSnapshot.hasChild("premium_method")) {
+            premium_method = (String) dataSnapshot.child("premium_method").getValue();
+            premium_method_Boolean = true;
         }
 
 
@@ -383,6 +403,13 @@ public class Policy_Data extends Fragment {
         if (initial_amount != null && !initial_amount.isEmpty()) {
             InitialAmount.setText(new DecimalFormat("##,##,##0").format(Integer.parseInt(initial_amount)));
         }
+
+        if (policy_type_Boolean)
+            PolicyType.setText(policy_type);
+        if (insured_event_Boolean)
+            InsuredEvent.setText(insured_event);
+        if (premium_method_Boolean)
+            PremiumMethod.setText(premium_method);
 
         TimeStamp.setText(timestamp);
         ProgressBarText.setText(percentage + "%");

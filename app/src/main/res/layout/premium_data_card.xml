@@ -54,7 +54,8 @@
 
                 <TextView
                     android:id="@+id/tvDate"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:padding="5dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="3dp"
                     android:background="@drawable/border"
@@ -78,19 +79,41 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <TextView
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="Amount Paid : "
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Amount Paid : "
+                            android:textStyle="bold" />
+
+
+                        <ImageView
+                            android:id="@+id/imageViewMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_icons8_repeat" />
+                    </LinearLayout>
+
 
                     <TextView
                         android:id="@+id/tvAmountPaid"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text=""
+                        android:drawableRight="@drawable/ic_rupee_indian"
+                        android:gravity="end"
+                        android:textSize="18dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -102,19 +125,8 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Mode : "
-                        android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/imageViewMode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_icons8_repeat" />
+
 
                 </LinearLayout>
 
@@ -131,7 +143,7 @@
                     android:id="@+id/imageViewDelete"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="10dp"
+                    android:padding="13dp"
                     android:src="@drawable/ic_icons8_trash" />
 
             </LinearLayout>

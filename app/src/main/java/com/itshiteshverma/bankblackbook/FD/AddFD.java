@@ -382,9 +382,9 @@ public class AddFD extends AppCompatActivity implements IPickResult {
 
     private void saveDatatoDB(String bank_Name, String nameOf_FDHolder, String nominee_Data, String account_Number) {
         dB_BankName.create(new MyObject(DB_BankName, bank_Name));
-        dB_BankName.create(new MyObject(DB_User_Name, nameOf_FDHolder));
-        dB_BankName.create(new MyObject(DB_User_Name, nominee_Data));
-        dB_BankName.create(new MyObject(DB_AccountNo, account_Number));
+        db_Name.create(new MyObject(DB_User_Name, nameOf_FDHolder));
+        db_Name.create(new MyObject(DB_User_Name, nominee_Data));
+        db_AccountNumber.create(new MyObject(DB_AccountNo, account_Number));
 
     }
 

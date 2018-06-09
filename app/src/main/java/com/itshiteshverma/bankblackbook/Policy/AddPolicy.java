@@ -37,8 +37,11 @@ import com.itshiteshverma.bankblackbook.HelperClass.DatabaseHandler_AutoComplete
 import com.itshiteshverma.bankblackbook.HelperClass.MyObject;
 import com.itshiteshverma.bankblackbook.MainPage;
 import com.itshiteshverma.bankblackbook.Policy.AutoCompleteText.CustomAutoCompleteTextChangedListener_BankName;
+import com.itshiteshverma.bankblackbook.Policy.AutoCompleteText.CustomAutoCompleteTextChangedListener_InsuredEvent;
 import com.itshiteshverma.bankblackbook.Policy.AutoCompleteText.CustomAutoCompleteTextChangedListener_Name;
 import com.itshiteshverma.bankblackbook.Policy.AutoCompleteText.CustomAutoCompleteTextChangedListener_Nominee;
+import com.itshiteshverma.bankblackbook.Policy.AutoCompleteText.CustomAutoCompleteTextChangedListener_PolicyType;
+import com.itshiteshverma.bankblackbook.Policy.AutoCompleteText.CustomAutoCompleteTextChangedListener_PremiumMethod;
 import com.itshiteshverma.bankblackbook.R;
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
@@ -69,9 +72,14 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
     final String DB_BankName = "Bank_Name";
     final String DB_User_Name = "User_Name";
     final String DB_AccountNo = "AccountNo";
-    public CustomAutoCompleteView BankName, NameOfFD_Holder, Nominee;
+    final String DB_Policy_Type = "Policy_Type";
+    final String DB_Premium_Method = "Premium_Method";
+    final String DB_InsuredEvent = "InsuredEvent";
+
+
+    public CustomAutoCompleteView BankName, NameOfFD_Holder, Nominee, InsuredEvent, PremiumMethod, PolicyType;
     // adapter for auto-complete
-    public ArrayAdapter<String> myAdapter_BankName, myAdapter_Name, myAdapter_Nominee;
+    public ArrayAdapter<String> myAdapter_BankName, myAdapter_Name, myAdapter_Nominee, myAdapter_PolciyType, myAdapter_PremiumMethod, myAdapter_InsuredEvent;
     // just to add some initial value
     public String[] item = new String[]{"Please search..."};
     MaterialEditText PolicyName, PolicyNumber, GuranteedMaturedSum, Remarks, InitialSum, PremiumSum;
@@ -88,7 +96,7 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
     SimpleDateFormat s;
     Button PolicyPhoto, PolicyPdf;
     // for database operations
-    DatabaseHandler_AutoComplete dB_BankName, db_Name, db_AccountNumber;
+    DatabaseHandler_AutoComplete dB_BankName, db_Name, db_AccountNumber, db_PolicyType, db_InsuredEvent, db_PremiumMethod;
     String PDF_filePath = null;
     String timeStamp;
 
@@ -152,6 +160,9 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
         bLastPremiumDate = findViewById(R.id.bLastPremiumDate);
         startDate = findViewById(R.id.bStartDate);
         Nominee = findViewById(R.id.etFDNominee);
+        InsuredEvent = findViewById(R.id.etInsuredEvent);
+        PolicyType = findViewById(R.id.etPolicyType);
+        PremiumMethod = findViewById(R.id.etPremiumMethod);
         Remarks = findViewById(R.id.etRemarks);
         PolicyPhoto = findViewById(R.id.imageButtonAddPolicy);
         LayoutUpdate = findViewById(R.id.LayourUpdateHide);
@@ -193,6 +204,9 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
             dB_BankName = new DatabaseHandler_AutoComplete(AddPolicy.this, DB_BankName);
             db_Name = new DatabaseHandler_AutoComplete(AddPolicy.this, DB_User_Name);
             db_AccountNumber = new DatabaseHandler_AutoComplete(AddPolicy.this, DB_AccountNo);
+            db_PolicyType = new DatabaseHandler_AutoComplete(AddPolicy.this, DB_Policy_Type);
+            db_InsuredEvent = new DatabaseHandler_AutoComplete(AddPolicy.this, DB_InsuredEvent);
+            db_PremiumMethod = new DatabaseHandler_AutoComplete(AddPolicy.this, DB_Premium_Method);
             // put sample data to database
             // autocompletetextview is in activity_main.xml
 
@@ -209,6 +223,17 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
             myAdapter_Nominee = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item);
             Nominee.setAdapter(myAdapter_Nominee);
 
+            PolicyType.addTextChangedListener(new CustomAutoCompleteTextChangedListener_PolicyType(this));
+            myAdapter_PolciyType = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item);
+            PolicyType.setAdapter(myAdapter_PolciyType);
+
+            InsuredEvent.addTextChangedListener(new CustomAutoCompleteTextChangedListener_InsuredEvent(this));
+            myAdapter_InsuredEvent = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item);
+            InsuredEvent.setAdapter(myAdapter_InsuredEvent);
+
+            PremiumMethod.addTextChangedListener(new CustomAutoCompleteTextChangedListener_PremiumMethod(this));
+            myAdapter_PremiumMethod = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item);
+            PremiumMethod.setAdapter(myAdapter_PremiumMethod);
 
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -237,6 +262,62 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
 
         return item;
     }
+
+    public String[] get_PolicyType_FromDb(String searchTerm) {
+
+        // add items on the array dynamically
+        List<MyObject> products = db_PolicyType.read(searchTerm);
+        int rowCount = products.size();
+
+        String[] item = new String[rowCount];
+        int x = 0;
+
+        for (MyObject record : products) {
+
+            item[x] = record.objectValue;
+            x++;
+        }
+
+        return item;
+    }
+
+    public String[] get_InsuredEvent_FromDb(String searchTerm) {
+
+        // add items on the array dynamically
+        List<MyObject> products = db_InsuredEvent.read(searchTerm);
+        int rowCount = products.size();
+
+        String[] item = new String[rowCount];
+        int x = 0;
+
+        for (MyObject record : products) {
+
+            item[x] = record.objectValue;
+            x++;
+        }
+
+        return item;
+    }
+
+    public String[] get_PremiumMethod_FromDb(String searchTerm) {
+
+        // add items on the array dynamically
+        List<MyObject> products = db_PremiumMethod.read(searchTerm);
+        int rowCount = products.size();
+
+        String[] item = new String[rowCount];
+        int x = 0;
+
+        for (MyObject record : products) {
+
+            item[x] = record.objectValue;
+            x++;
+        }
+
+        return item;
+    }
+
+
 
     public String[] get_Name_FromDb(String searchTerm) {
 
@@ -453,6 +534,10 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
         final String Remarks_data = Remarks.getText().toString().trim();
         final String premium_amount = PremiumSum.getText().toString().trim();
         final String initial_amount = InitialSum.getText().toString().trim();
+        final String insured_event = InsuredEvent.getText().toString().trim();
+        final String premium_method = PremiumMethod.getText().toString().trim();
+        final String policy_type = PolicyType.getText().toString().trim();
+
         int selectedId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(selectedId);
 
@@ -470,6 +555,9 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
             Map<String, Object> value = new HashMap<>();
             value.put("type", "POLICY");
             value.put("policy_name", Policy_Name);
+            value.put("policy_type", policy_type);
+            value.put("premium_method", premium_method);
+            value.put("insured_event", insured_event);
             value.put("policy_number", Policy_Number);
             value.put("bank_name", Bank_Name);
             value.put("nameof_policy_holder", NameOf_PolicyHolder);
@@ -515,7 +603,7 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
                 }
 
 
-                saveDatatoDB(Bank_Name, NameOf_PolicyHolder, Nominee_data);
+                saveDatatoDB(Bank_Name, NameOf_PolicyHolder, Nominee_data, insured_event, policy_type, premium_method);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -549,10 +637,15 @@ public class AddPolicy extends AppCompatActivity implements IPickResult {
         }
     }
 
-    private void saveDatatoDB(String bank_Name, String nameOf_FDHolder, String nominee_Data) {
+    private void saveDatatoDB(String bank_Name, String nameOf_FDHolder, String nominee_Data,
+                              String insured_event, String policy_type, String premium_method) {
         dB_BankName.create(new MyObject(DB_BankName, bank_Name));
-        dB_BankName.create(new MyObject(DB_User_Name, nameOf_FDHolder));
-        dB_BankName.create(new MyObject(DB_User_Name, nominee_Data));
+        db_Name.create(new MyObject(DB_User_Name, nameOf_FDHolder));
+        db_Name.create(new MyObject(DB_User_Name, nominee_Data));
+
+        db_PolicyType.create(new MyObject(DB_Policy_Type, policy_type));
+        db_InsuredEvent.create(new MyObject(DB_InsuredEvent, insured_event));
+        db_PremiumMethod.create(new MyObject(DB_Premium_Method, premium_method));
 
     }
 

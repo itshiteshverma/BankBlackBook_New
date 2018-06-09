@@ -167,9 +167,9 @@ public class FD_Data extends Fragment {
             public void onClick(View view) {
                 new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE)
                         .setTitleText("Details")
-                        .setContentText("Total Duration : " + (int) yearsinBetweenStartAndEnd + " Years & " +
-                                (int) monthsinBetweenStartAndEnd % 12 + " Months. \n \n" + "Total Remaining : " + (int) yearsinBetweenCurrentAndEnd + " Years & " +
-                                (int) monthsinBetweenCurrentAndEnd % 12 + " Months.")
+                        .setContentText("Total Duration : " + (int) yearsinBetweenStartAndEnd + " Y & " +
+                                (int) monthsinBetweenStartAndEnd % 12 + " M. \n \n" + "Total Remaining : " + (int) yearsinBetweenCurrentAndEnd + " Y & " +
+                                (int) monthsinBetweenCurrentAndEnd % 12 + " M.")
 
                         .show();
 

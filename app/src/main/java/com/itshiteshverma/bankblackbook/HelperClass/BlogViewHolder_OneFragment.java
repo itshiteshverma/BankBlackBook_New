@@ -48,7 +48,7 @@ public class BlogViewHolder_OneFragment extends RecyclerView.ViewHolder {
         switch (type) {
             case "POLICY":
                 // this.mainLayout.setBackgroundColor(Color.parseColor("#a91aa6f1"));
-                this.mainLayout.setBackground(ContextCompat.getDrawable(mView.getContext(), R.drawable.border_round_blue));
+                this.mainLayout.setBackground(ContextCompat.getDrawable(mView.getContext(), R.drawable.border_round_green));
                 break;
 
             case "FD":
