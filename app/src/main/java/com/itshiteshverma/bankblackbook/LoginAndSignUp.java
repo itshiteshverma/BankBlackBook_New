@@ -213,7 +213,7 @@ public class LoginAndSignUp extends AppCompatActivity {
                                                                 .show();
 
                                                     } else {
-                                                        Intent intent = new Intent(LoginAndSignUp.this, MainActivity.class);
+                                                        Intent intent = new Intent(LoginAndSignUp.this, SplashScreen.class);
                                                         startActivity(intent);
                                                         finish();
                                                     }
@@ -223,7 +223,7 @@ public class LoginAndSignUp extends AppCompatActivity {
                                     pDialog.dismissWithAnimation();
 
                                 } else {
-                                    startActivity(new Intent(LoginAndSignUp.this, MainActivity.class));
+                                    startActivity(new Intent(LoginAndSignUp.this, SplashScreen.class));
                                     finish();
                                     pDialog.dismissWithAnimation();
                                 }

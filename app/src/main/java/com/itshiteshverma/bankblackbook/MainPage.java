@@ -46,6 +46,8 @@ public class MainPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
     ViewPager viewPager;
     TabLayout tabLayout;
     TextView userName, userEmailId;
@@ -53,7 +55,6 @@ public class MainPage extends AppCompatActivity
     RatingDialog ratingDialog;
     FloatingActionMenu materialDesignFAM;
     com.github.clans.fab.FloatingActionButton floatingActionButton1, floatingActionButton2;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private int[] tabIcons = {
             R.drawable.ic_blur_circular_black_24dp,
             R.drawable.all_fd_policy_black_24dp

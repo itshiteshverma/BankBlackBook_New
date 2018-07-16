@@ -8,7 +8,7 @@ import com.crashlytics.android.Crashlytics;
 
 import io.fabric.sdk.android.Fabric;
 
-public class MainActivity extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     Thread.sleep(700);
-                    startActivity(new Intent(MainActivity.this, LoginAndSignUp.class));
+                    startActivity(new Intent(SplashScreen.this, LoginAndSignUp.class));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

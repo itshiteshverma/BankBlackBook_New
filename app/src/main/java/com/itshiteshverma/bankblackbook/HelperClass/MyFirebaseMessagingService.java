@@ -13,8 +13,8 @@ import android.support.v4.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.itshiteshverma.bankblackbook.MainActivity;
 import com.itshiteshverma.bankblackbook.R;
+import com.itshiteshverma.bankblackbook.SplashScreen;
 
 
 /**
@@ -27,7 +27,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, SplashScreen.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
         Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.logo_icon);
